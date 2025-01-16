@@ -17,7 +17,7 @@ This project is a web-based application built using Flask that predicts whether 
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/Kishore8220/lung-cancer-prediction.git
+    git clone https://github.com/kishore8220/Lung_Cancer_Prediction.git
     cd lung-cancer-prediction
     ```
 
