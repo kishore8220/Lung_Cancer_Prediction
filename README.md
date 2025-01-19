@@ -1,102 +1,153 @@
-# Lung Cancer Prediction Web Application
+# 🌎 Lung Cancer Prediction Web Application
 
-This project is a web-based application built using Flask that predicts whether a person has lung cancer based on various health-related factors. It uses a machine learning model (Logistic Regression) to predict the likelihood of lung cancer from a set of user-provided input features.
-
-## Features
-- **Prediction of Lung Cancer**: Based on the user's input, the model predicts if the person has lung cancer or not.
-- **Model Accuracy**: The application provides the accuracy of the model on the test data set.
-- **Data Preprocessing**: The application preprocesses the data, handles categorical features, and uses logistic regression for prediction.
-
-## Technologies Used
-- **Flask**: Web framework to create the web application.
-- **pandas**: For data manipulation and processing.
-- **scikit-learn**: For machine learning, specifically Logistic Regression and data preprocessing techniques like Label Encoding.
-- **HTML/CSS**: For creating the frontend user interface.
-
-## Installation
-
-1. Clone the repository:
-    ```bash
-    git clone https://github.com/kishore8220/Lung_Cancer_Prediction.git
-    cd lungcancer
-    ```
-
-2. Create a virtual environment (optional but recommended):
-    ```bash
-    python -m venv venv
-    ```
-
-3. Activate the virtual environment:
-    - On Windows:
-        ```bash
-        venv\Scripts\activate
-        ```
-    - On Mac/Linux:
-        ```bash
-        source venv/bin/activate
-        ```
-
-4. Install the required dependencies:
-    ```bash
-    pip install -r requirements.txt
-    ```
-
-5. Download the dataset `lung_cancer_survey.csv` and place it in the root directory of the project.
-
-6. Run the Flask application:
-    ```bash
-    python app.py
-    ```
-
-7. Open your browser and navigate to:
-    ```
-    http://127.0.0.1:5000/
-    ```
-
-## Application Overview
-
-### 1. **Home Page**
-   - The home page contains a simple form where the user can input their health-related information. The inputs include gender, age, smoking status, yellow fingers, anxiety, peer pressure, allergy, wheezing, alcohol consumption, coughing, shortness of breath, swallowing difficulty, and chest pain.
-   
-### 2. **Prediction Page**
-   - When the form is submitted, the application processes the data and makes a prediction using the logistic regression model.
-   - The prediction is displayed on a results page, which tells the user whether they are predicted to have lung cancer (`Cancer`) or not (`Not Cancer`).
-   - The model’s accuracy on the test dataset is also shown on the results page.
-
-## Code Explanation
-
-- **Data Loading & Preprocessing**:
-    - The dataset `lung_cancer_survey.csv` is loaded using `pandas`. The columns `CHRONIC DISEASE` and `FATIGUE` are dropped, and categorical columns like `GENDER` and `LUNG_CANCER` are encoded using `LabelEncoder`.
-    
-- **Model Training**:
-    - The data is split into training and testing sets using `train_test_split` from `sklearn`. The logistic regression model is trained on the training data.
-    
-- **Prediction**:
-    - When the user submits their information, the data is passed to the trained logistic regression model for prediction. The result is returned as `Cancer` or `Not Cancer` based on the model's output.
-
-### Flask Routes:
-- **`/` (Home Route)**: Displays the input form for the user to enter their health-related data.
-- **`/predict` (Prediction Route)**: Processes the form data, makes a prediction using the logistic regression model, and displays the result along with the model's accuracy.
-
-## Files in the Project
-
-- **app.py**: The main Python script that contains the Flask application logic and the machine learning model.
-- **lung_cancer_survey.csv**: The dataset used to train the model (this should be placed in the root directory).
-- **templates/**:
-    - **index.html**: The form page where users input their data.
-    - **result.html**: The results page displaying the prediction and accuracy.
-- **static/**: Folder for static files like CSS, images, or JavaScript (optional for styling).
-
-## Dataset Information
-The dataset `lung_cancer_survey.csv` includes health-related survey data used to predict lung cancer. Each row represents a person’s health information, with columns representing various health attributes such as age, gender, smoking status, and symptoms. The target variable is `LUNG_CANCER`, which is binary (0 for no cancer, 1 for cancer).
-
-## Contributing
-Feel free to fork this project and make improvements or modifications. If you would like to contribute, please create a pull request.
-
-## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This web-based application predicts the likelihood of lung cancer based on user-provided health-related factors. Using **Machine Learning (Logistic Regression)**, the system analyzes input features to deliver predictions in a seamless and user-friendly manner.
 
 ---
 
-## Contact
-For any questions or feedback, please open an issue in the repository or reach out to [kdkishore91@gmail.com].
+## 🔥 Key Features
+- ✅ **Accurate Predictions**: Uses a logistic regression model trained on survey data.
+- 📊 **Model Accuracy**: Displays the model’s performance on test data.
+- ⚙️ **Data Preprocessing**: Handles categorical data and applies label encoding for seamless processing.
+- 🌐 **Responsive Design**: Easy-to-use web interface built with Flask and Bootstrap.
+
+---
+
+## 🛠️ Technologies Used
+- **Flask**: Backend framework for handling requests and responses.
+- **pandas**: Data manipulation and preprocessing.
+- **scikit-learn**: Logistic regression and data splitting utilities.
+- **HTML/CSS**: For creating an interactive and responsive UI.
+
+---
+
+## 🎮 Preview of Output
+
+![Output Preview](Output.png)
+
+---
+
+## 📚 Installation Guide
+
+### 1. Clone the Repository
+```bash
+$ git clone https://github.com/kishore8220/Lung_Cancer_Prediction.git
+$ cd lungcancer
+```
+
+### 2. Set Up the Virtual Environment (Optional but Recommended)
+```bash
+$ python -m venv venv
+```
+
+### 3. Activate the Environment
+- **Windows**:
+  ```bash
+  venv\Scripts\activate
+  ```
+- **Mac/Linux**:
+  ```bash
+  source venv/bin/activate
+  ```
+
+### 4. Install Dependencies
+```bash
+$ pip install -r requirements.txt
+```
+
+### 5. Add Dataset
+Download the dataset `lung_cancer_survey.csv` and place it in the project’s root directory.
+
+### 6. Start the Application
+```bash
+$ python app.py
+```
+
+### 7. Access the Application
+Open your browser and navigate to:
+```
+http://127.0.0.1:5000/
+```
+
+---
+
+## 🏡 Application Pages Overview
+
+### **Home Page**
+- Input form for user health-related data.
+- Fields include:
+  - **Gender**, **Age**, **Smoking Status**, **Symptoms** (e.g., Coughing, Chest Pain), and more.
+
+### **Prediction Page**
+- Displays whether the person is predicted to have **Lung Cancer** or **Not Cancer**.
+- Shows the logistic regression model’s accuracy.
+
+---
+
+## ⚖️ Code Highlights
+
+### **Model Workflow**:
+1. **Data Loading & Preprocessing**:
+   - Loads `lung_cancer_survey.csv` using `pandas`.
+   - Handles categorical features with `LabelEncoder`.
+
+2. **Training**:
+   - Splits the data into training and test sets using `train_test_split`.
+   - Fits the logistic regression model to the training data.
+
+3. **Prediction**:
+   - Processes user inputs via the web form.
+   - Makes predictions using the trained model.
+
+### Flask Routes
+- **`/`** (Home): Displays the input form.
+- **`/predict`**: Processes inputs and returns prediction results.
+
+---
+
+## 🔄 Project Structure
+
+```
+project/
+├── app.py                 # Main application file
+├── lung_cancer_survey.csv # Dataset
+├── templates/             # HTML templates
+│   ├── index.html         # Input form
+│   └── result.html        # Results page
+├── static/                # Static files (CSS, JS, images)
+└── requirements.txt       # Dependencies
+```
+
+---
+
+## 🔄 Dataset Overview
+- **File**: `lung_cancer_survey.csv`
+- **Attributes**:
+  - **Input Features**: Age, Gender, Smoking Status, Symptoms, etc.
+  - **Target Variable**: `LUNG_CANCER` (1: Cancer, 0: Not Cancer)
+
+---
+
+## 🔍 Sample Output
+
+- **Input**: Gender: Male, Age: 45, Smoking: Yes, Chest Pain: Yes
+- **Output**: Prediction: **Cancer**
+  - Model Accuracy: **85%**
+
+---
+
+## 🔧 Contributing
+1. Fork the repository.
+2. Make your changes.
+3. Create a pull request for review.
+
+---
+
+## 🛠 License
+This project is licensed under the MIT License. See the [LICENSE](LICENSE) file for details.
+
+---
+
+## 📢 Contact
+Have questions or feedback? Reach out at:
+- **Email**: [kdkishore91@gmail.com](mailto:kdkishore91@gmail.com)
+
