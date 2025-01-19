@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lung Cancer Prediction</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2 class="text-center">Lung Cancer Prediction</h2>
+        <form action="/predict" method="post" class="mt-4">
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="GENDER">Gender</label>
+                    <select id="GENDER" name="GENDER" class="form-control">
+                        <option value="0">Female</option>
+                        <option value="1">Male</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="age">Age</label>
+                    <input type="number" class="form-control" id="age" name="age" required>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="SMOKING">Smoking</label>
+                    <select id="SMOKING" name="SMOKING" class="form-control">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="YELLOW_FINGERS">Yellow Fingers</label>
+                    <select id="YELLOW_FINGERS" name="YELLOW_FINGERS" class="form-control">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="ANXIETY">Anxiety</label>
+                    <select id="ANXIETY" name="ANXIETY" class="form-control">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="PEER_PRESSURE">Peer Pressure</label>
+                    <select id="PEER_PRESSURE" name="PEER_PRESSURE" class="form-control">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="ALLERGY">Allergy</label>
+                    <select id="ALLERGY" name="ALLERGY" class="form-control">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="WHEEZING">Wheezing</label>
+                    <select id="WHEEZING" name="WHEEZING" class="form-control">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="ALCOHOL_CONSUMING">Alcohol Consuming</label>
+                    <select id="ALCOHOL_CONSUMING" name="ALCOHOL_CONSUMING" class="form-control">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="COUGHING">Coughing</label>
+                    <select id="COUGHING" name="COUGHING" class="form-control">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="SHORTNESS_OF_BREATH">Shortness of Breath</label>
+                    <select id="SHORTNESS_OF_BREATH" name="SHORTNESS_OF_BREATH" class="form-control">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="SWALLOWING_DIFFICULTY">Swallowing Difficulty</label>
+                    <select id="SWALLOWING_DIFFICULTY" name="SWALLOWING_DIFFICULTY" class="form-control">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label for="CHEST_PAIN">Chest Pain</label>
+                    <select id="CHEST_PAIN" name="CHEST_PAIN" class="form-control">
+                        <option value="0">No</option>
+                        <option value="1">Yes</option>
+                    </select>
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Predict</button>
+        </form>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
